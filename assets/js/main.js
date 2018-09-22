@@ -82,9 +82,12 @@
 					$header.css('background-position', 'left 0px');
 					$header.css('background-size', 'auto, auto '+ (($body.height() - $window.height()) / settings.parallaxFactor + $window.height()) + 'px');
 
+					$window.on('resize', function () {
+						$header.css('background-size', 'auto, auto '+ (($body.height() - $window.height()) / settings.parallaxFactor + $window.height()) + 'px');
+					});
+
 					$window.on('scroll.strata_parallax', function() {
 						$header.css('background-position', 'center ' + (-1 * ($window.scrollTop() / settings.parallaxFactor)) + 'px');
-						$header.css('background-size', 'auto, auto '+ (($body.height() - $window.height()) / settings.parallaxFactor + $window.height()) + 'px');
 					});
 
 				});
