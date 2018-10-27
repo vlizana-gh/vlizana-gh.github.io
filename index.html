@@ -6,10 +6,11 @@
 -->
 <html>
 <head>
-	<title>vlizana's site</title>
+	<title>vlizana's site (WIP)</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/plotly-latest.min.js"></script>
 </head>
 <body class="is-preload">
 
@@ -118,8 +119,22 @@
 		-->
 	</section>
 
-	<!-- Three -->
 	<section id="three">
+		<h2>Plotly</h2>
+		<p>
+			<a href="https://plot.ly/">Plotly</a> is an amazing interactive visualization library I've been working with for some time now. In its core it
+			is a javascript library but its clients Plotly.py and Plotly.R make it suitable for data science and scientific
+			applications in general, and you can easily export your visualizations to use them in a web frontend.
+		</p>
+		<div class="box alt">
+			<div class="row gtr-50 gtr-uniform aln-center">
+				<div id="plotly-example" class="col-12"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Three -->
+	<section id="four">
 		<h2>Get In Touch</h2>
 		<p>Always happy to help.</p>
 		<div class="row">
@@ -498,6 +513,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+	Plotly.d3.json('plots/plotly-example.json', function(err, fig) {
+		Plotly.plot('plotly-example', fig.data, fig.layout);
+	});
+</script>
 
 </body>
 </html>
