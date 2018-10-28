@@ -515,7 +515,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script src="assets/js/main.js"></script>
 <script>
 	Plotly.d3.json('plots/plotly-example.json', function(err, fig) {
-		Plotly.plot('plotly-example', fig.data, fig.layout);
+		Plotly.plot('plotly-example', fig.data, fig.layout, {'responsive': true});
 	});
 </script>
 
