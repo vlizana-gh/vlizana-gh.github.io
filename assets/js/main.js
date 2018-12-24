@@ -87,6 +87,7 @@
 					});
 
 					$window.on('scroll.strata_parallax', function() {
+						$header.css('background-size', 'auto, auto '+ (($body.height() - $window.height()) / settings.parallaxFactor + $window.height()) + 'px');
 						$header.css('background-position', 'center ' + (-1 * ($window.scrollTop() / settings.parallaxFactor)) + 'px');
 					});
 
